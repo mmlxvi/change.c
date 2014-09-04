@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+{
+
+    int cents, count, a, b, c, i, j, k;
+    
+    float dollar;
+    
+    
+
+    do
+    {
+    printf("How much change do I owe you? ");
+    dollar = GetFloat();
+    
+    }
+    while (dollar < 0);
+    {
+        cents = round(((dollar)*100.0));
+       
+    }
+    
+    a = (cents % 25);
+    i = ((cents - a)/25);
+    b = (a % 10);
+    j = (a - b)/10;
+    c = (b % 5);
+    k = (b - c)/5;
+    count = i + j + k + c;
+    
+    printf("%d\n", count);
+    
+    return 0;
+
+}
